@@ -1065,22 +1065,22 @@ angular.module( 'isteven-multi-select', ['ng'] )
                             ng-if="isteven.helperStatus.all"' +
                             ng-click="isteven.select( \'all\', $event );"' +
                             ng-bind-html="isteven.lang.selectAll">
-                        </button>`
+                        </button>` +
                         // select none
-                        '<button type="button" class="helperButton"' +
-                            'ng-disabled="isteven.isDisabled"' + 
-                            'ng-if="isteven.helperStatus.none"' +
-                            'ng-click="isteven.select( \'none\', $event );"' +
-                            'ng-bind-html="isteven.lang.selectNone">' +
-                        '</button>'+
+                        `<button type="button" class="helperButton"
+                            ng-disabled="isteven.isDisabled"
+                            ng-if="isteven.helperStatus.none"
+                            ng-click="isteven.select( \'none\', $event );"
+                            ng-bind-html="isteven.lang.selectNone">
+                        </button>` +
                         // reset
-                        '<button type="button" class="helperButton reset"' +
-                            'ng-disabled="isteven.isDisabled"' + 
-                            'ng-if="isteven.helperStatus.reset"' +
-                            'ng-click="isteven.select( \'reset\', $event );"' +
-                            'ng-bind-html="isteven.lang.reset">'+
-                        '</button>' +
-                    '</div>' +
+                        `<button type="button" class="helperButton reset"
+                            ng-disabled="isteven.isDisabled"
+                            ng-if="isteven.helperStatus.reset"
+                            ng-click="isteven.select( \'reset\', $event );"
+                            ng-bind-html="isteven.lang.reset">
+                        </button>
+                    </div>`
                     // the search box
                     '<div class="line" style="position:relative" ng-if="isteven.helperStatus.filter">'+
                         // textfield                
@@ -1094,34 +1094,34 @@ angular.module( 'isteven-multi-select', ['ng'] )
                     '</div> '+
                 '</div> '+
                 // selection items
-                '<div class="checkBoxContainer">'+
-                    '<div '+
-                        'ng-repeat="item in isteven.filteredModel | filter:isteven.removeGroupEndMarker" class="multiSelectItem"'+
-                        'ng-class="{selected: item[ isteven.tickProperty ], horizontal: orientationH, vertical: orientationV, multiSelectGroup:item[ groupProperty ], disabled:isteven.itemIsDisabled( item )}"'+
-                        'ng-click="isteven.syncItems( item, $event, $index );" '+
-                        'ng-mouseleave="isteven.removeFocusStyle( tabIndex );"> '+
+                `<div class="checkBoxContainer">
+                    <div '+
+                        ng-repeat="item in isteven.filteredModel | filter:isteven.removeGroupEndMarker" class="multiSelectItem"
+                        ng-class="{selected: item[ isteven.tickProperty ], horizontal: orientationH, vertical: orientationV, multiSelectGroup:item[ groupProperty ], disabled:isteven.itemIsDisabled( item )}"
+                        ng-click="isteven.syncItems( item, $event, $index );"
+                        'ng-mouseleave="isteven.removeFocusStyle( tabIndex );">` +
                         // this is the spacing for grouped items
-                        '<div class="acol" ng-if="item[ isteven.spacingProperty ] > 0" ng-repeat="i in isteven.numberToArray( item[ isteven.spacingProperty ] ) track by $index">'+                        
-                    '</div>  '+        
-                    '<div class="acol">'+
-                        '<label>'+                                
+                        `<div class="acol" ng-if="item[ isteven.spacingProperty ] > 0" ng-repeat="i in isteven.numberToArray( item[ isteven.spacingProperty ] ) track by $index">
+                    </div>        
+                    <div class="acol">
+                        <label>` +
                             // input, so that it can accept focus on keyboard click
-                            '<input class="checkbox focusable" type="checkbox" '+
-                                'ng-disabled="isteven.itemIsDisabled( item )" '+
-                                'ng-checked="item[ isteven.tickProperty ]" '+
-                                'ng-click="isteven.syncItems( item, $event, $index )" />'+
+                            `<input class="checkbox focusable" type="checkbox"
+                                ng-disabled="isteven.itemIsDisabled( item )"
+                                ng-checked="item[ isteven.tickProperty ]"
+                                ng-click="isteven.syncItems( item, $event, $index )" />` +
                             // item label using ng-bind-hteml
-                            '<span '+
-                                'ng-class="{disabled:isteven.itemIsDisabled( item )}" '+
-                                'ng-bind-html="isteven.writeLabel( item, \'itemLabel\' )">'+
-                            '</span>'+
-                        '</label>'+
-                    '</div>'+
+                            `<span
+                                ng-class="{disabled:isteven.itemIsDisabled( item )}"
+                                ng-bind-html="isteven.writeLabel( item, \'itemLabel\' )">
+                            </span>
+                        </label>
+                    </div>` +
                     // the tick/check mark
-                    '<span class="tickMark" ng-if="item[ groupProperty ] !== true && item[ tickProperty ] === true" ng-bind-html="isteven.icon.tickMark"></span>'+
-                '</div>'+
-            '</div>'+
-        '</div>'+
-    '</span>';
+                    `<span class="tickMark" ng-if="item[ groupProperty ] !== true && item[ tickProperty ] === true" ng-bind-html="isteven.icon.tickMark"></span>'+
+                </div>
+            </div>
+        </div>
+    </span>`;
 	$templateCache.put( 'isteven-multi-select.htm' , template );
 }]); 
