@@ -6,6 +6,10 @@
         "isteven-multi-select.js",
         "isteven-multi-select.css"
     ],
+    "scripts": {
+        "http-server": "http-server",
+        "tsc": "tsc"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/isteven/angular-multi-select.git"
@@ -18,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/isteven/angular-multi-select/issues"
     },
-    "homepage": "https://github.com/isteven/angular-multi-select"
+    "homepage": "https://github.com/isteven/angular-multi-select",
+    "dependencies": {
+        "http-server": "^0.10.0"
+    }
 }
