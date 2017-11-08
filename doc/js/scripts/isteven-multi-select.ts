@@ -1060,12 +1060,12 @@ angular.module( 'isteven-multi-select', ['ng'] )
                     // container of the first 3 buttons, select all, none and reset
                     '<div class="line" ng-if="isteven.helperStatus.all || isteven.helperStatus.none || isteven.helperStatus.reset ">' +
                         // select all
-                        '<button type="button" class="helperButton"' +
-                            'ng-disabled="isteven.isDisabled"' + 
-                            'ng-if="isteven.helperStatus.all"' +
-                            'ng-click="isteven.select( \'all\', $event );"' +
-                            'ng-bind-html="isteven.lang.selectAll">' +
-                        '</button>'+
+                        `<button type="button" class="helperButton"
+                            ng-disabled="isteven.isDisabled"
+                            ng-if="isteven.helperStatus.all"' +
+                            ng-click="isteven.select( \'all\', $event );"' +
+                            ng-bind-html="isteven.lang.selectAll">
+                        </button>`
                         // select none
                         '<button type="button" class="helperButton"' +
                             'ng-disabled="isteven.isDisabled"' + 
